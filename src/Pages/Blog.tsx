@@ -3,16 +3,19 @@ import { useNavigate } from "react-router-dom";
 import BlogCard1 from "../Componants/BlogCard1";
 import BlogCard2 from "../Componants/BlogCard2";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { blogData } from "../Data/blogData"; // Importing blog data
+import { blogData } from "../Data/blogData";
+// import type { BlogPost } from "../Data/blogData"; // ✅ Use shared BlogPost type
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 4;
   const navigate = useNavigate();
 
+  // Get the latest blog post separately
   const latestPost = blogData.length > 0 ? [blogData[blogData.length - 1]] : [];
   const sortedPosts = blogData.slice(0, blogData.length - 1);
 
+  // Pagination calculations
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
@@ -21,6 +24,8 @@ export default function Blog() {
   return (
     <div className="px-4 md:px-10 lg:px-40 pt-20 bg-black">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        {/* Latest Post */}
         <div
           onClick={() =>
             navigate(`/blog/${latestPost[0]?.id}`, {
@@ -31,6 +36,7 @@ export default function Blog() {
           <BlogCard1 blogPosts={latestPost} />
         </div>
 
+        {/* Other Posts */}
         <div className="space-y-4">
           {currentPosts.map((post) => (
             <div
@@ -42,8 +48,10 @@ export default function Blog() {
             </div>
           ))}
 
+          {/* Pagination */}
           {totalPages > 1 && (
             <ol className="flex justify-center gap-2 text-xs font-medium mt-6">
+              {/* Prev */}
               <li>
                 <button
                   className="p-2 rounded-sm border border-gray-100 bg-white text-gray-900 disabled:opacity-50 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
@@ -54,6 +62,7 @@ export default function Blog() {
                 </button>
               </li>
 
+              {/* Page Numbers */}
               {Array.from({ length: totalPages }, (_, index) => (
                 <li key={index + 1}>
                   <button
@@ -69,6 +78,7 @@ export default function Blog() {
                 </li>
               ))}
 
+              {/* Next */}
               <li>
                 <button
                   className="p-2 rounded-sm border border-gray-100 bg-white text-gray-900 disabled:opacity-50 dark:border-gray-800 dark:bg-gray-900 dark:text-white"

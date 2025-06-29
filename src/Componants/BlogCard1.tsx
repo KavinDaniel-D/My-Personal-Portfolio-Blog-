@@ -1,12 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
-interface BlogPost {
-  id: number;
-  image: string;
-  category: string;
-  title: string;
-  description: string;
-}
+import type { BlogPost } from "../Data/blogData"; // ✅ Import shared BlogPost type
 
 interface BlogListProps {
   blogPosts: BlogPost[];
@@ -20,7 +13,7 @@ export default function BlogList({ blogPosts }: BlogListProps) {
   const navigate = useNavigate();
 
   return (
-    <div className="">
+    <div>
       {blogPosts.map((post) => (
         <div key={post.id} className="rounded bg-gray-900 p-4 shadow-lg">
           <img
