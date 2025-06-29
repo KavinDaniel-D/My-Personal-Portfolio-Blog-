@@ -17,7 +17,7 @@ export default function Header() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
 
-  const navItems = ["HOME", "BLOG", "GALLERY"];
+  const navItems = ["HOME", "BLOG"];
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black shadow-lg border-b border-gray-800">

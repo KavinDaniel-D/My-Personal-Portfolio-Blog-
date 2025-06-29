@@ -3,7 +3,7 @@ import Home from "./Pages/Home";
 import Blog from "./Pages/Blog";
 import BlogDetails from "./Pages/BlogDetails"; 
 import RootLayout from "./layout/RootLayout";
-import Gallery from "./Pages/Gallery";
+// import Gallery from "./Pages/Gallery";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -11,7 +11,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="blog" element={<Blog />} />
       <Route path="/blog/:id" element={<BlogDetails />} />
-      <Route path="gallery" element={<Gallery />} />
+      {/* <Route path="gallery" element={<Gallery />} /> */}
   
     </Route>
   )

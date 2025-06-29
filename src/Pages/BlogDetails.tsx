@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
-// import admin from "../assets/images/bg-4.jpg"; // Fixed Import
+import admin from "../assets/images/bg-4.jpg"; // Fixed Import
 
 export default function BlogDetails() {
   const location = useLocation();
@@ -40,7 +40,7 @@ export default function BlogDetails() {
               </h2>
               <div className="flex mt-3">
                 <img
-                  // src={admin}
+                  src={admin}
                   className="h-10 w-10 rounded-full mr-2 object-cover"
                 />
                 <div>
