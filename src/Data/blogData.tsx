@@ -8,7 +8,7 @@ export type BlogPost = {
     content: string;
   };
   
-  // import blog20 from "../assets/images/bg-2.jpg";
+  import blog20 from "../assets/images/bg-2.jpg";
   
   export const blogData: BlogPost[] = [
     {
@@ -79,7 +79,7 @@ export type BlogPost = {
       title: "Best Music Albums of 2025",
       description: "Explore the top music albums of the year From pop to rock, the music industry has seen incredible releases in 2025. Discover the best albums and artists shaping the sound of the year ihdeiucbd jdbcjkdnckldskjnjfnvndkcndkcjejicheughcudhc.",
       subDescription: "A selection of the best albums across various genres.",
-      image: "src/assets/images/c.jpg",
+      image: blog20,
       category: "Music",
       content: "From pop to rock, the music industry has seen incredible releases in 2025. Discover the best albums and artists shaping the sound of the year ihdeiucbd jdbcjkdnckldskjnjfnvndkcndkcjejicheughcudhc."
     }

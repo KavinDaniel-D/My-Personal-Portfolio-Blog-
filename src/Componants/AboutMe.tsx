@@ -1,12 +1,12 @@
 import { Parallax } from "react-scroll-parallax";
-// import bg1 from "../assets/images/bg-1.jpg";
+import bg1 from "../assets/images/bg-1.jpg";
 
 export default function AboutMe() {
   return (
     <div className="relative">
       <section
         className="min-h-screen grid grid-cols-1 md:grid-cols-2 items-center justify-center bg-cover bg-center px-6 md:px-16"
-        // style={{ backgroundImage: `url(${bg1})` }}
+        style={{ backgroundImage: `url(${bg1})` }}
       >
         <Parallax speed={-12} translateX={[0, 30]}>
           <div className="bg-black h-screen bg-opacity-80 p-8 md:p-12 lg:p-16 rounded-lg shadow-lg max-w-2xl mx-auto md:mx-0 text-center md:text-left">
