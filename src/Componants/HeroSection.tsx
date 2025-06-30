@@ -1,13 +1,13 @@
 import { Parallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
-
+import hero from "../assets/images/bg-5.jpg"
 export default function HeroSection(){
   return (
     <section className=" min-h-screen flex items-center bg-black">
 
       <Parallax translateX={[0, 20]}>
         <motion.img
-          src="src/assets/images/bg-5.jpg"
+          src={hero}
           alt="Background"
           className=" "
           initial={{ opacity: 0, scale: 0.9 }}
